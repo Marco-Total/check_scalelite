@@ -74,7 +74,7 @@ do
  video="video.$count"
  largemeeting="largmeeting.$count"
  servername_value=$(echo $line | awk '{ print $1 }' | cut -d "." -f1)
- servername_value=$servername_value.thillm.de
+ servername_value=$servername_value.xxx.de
 
  servername_state_value=$(echo $line | awk '{ print $2 }')
  servername_status_value=$(echo $line | awk '{ print $3 }')
@@ -110,8 +110,8 @@ do
  fi
 
 #Perfomance-Data
-#Beim Servernamen wird Thillm.de entfernt, da sonst Icinga2 die Performance-Werte im Grphite nicht darstellen kann
-servername_value=$(echo "${servername_value/.thillm.de/""}")
+#Beim Servernamen wird xxx.de entfernt, da sonst Icinga2 die Performance-Werte im Graphite nicht darstellen kann
+servername_value=$(echo "${servername_value/.xxx.de/""}")
 echo "|$servername_value.meetings=$servername_meetings_value;$WARNING_MEETINGS;$CRITICAL_MEETINGS" ;
 echo "|$servername_value.users=$servername_users_value;$WARNING_USERS;$CRITICAL_USERS" ;
 echo "|$servername_value.videos=$servername_video_value;$WARNING_VIDEO;$CRITICAL_VIDEO" ;
