@@ -10,9 +10,9 @@ Parameter: -w STRING Warnung: Anzahl Meetings,User,Video -c STRING Kritisch: Anz
 
 Icinga2 Template:
 
-object CheckCommand "check_scalelite" {
+    object CheckCommand "check_scalelite" {
     import "plugin-check-command"
-    command = [ PluginDir + "/check_scalelite.sh" ]
+     command = [ PluginDir + "/check_scalelite.sh" ]
     arguments += {
         "-c" = {
             description = "Kritische Anzahl: Meetings,User,Video"
@@ -23,5 +23,5 @@ object CheckCommand "check_scalelite" {
             value = "$check_scalelite_warning$"
         }
     }
-}
+    }
 
